@@ -1,0 +1,30 @@
+<%- include('header'); -%>
+    <h1 class="heading"><%= header %></h1>
+    <div class="main">
+        <!-- <div class="listelement">
+            <input type="checkbox">
+            <p class="initial">Bath</p>
+        </div>
+        <div class="listelement">
+            <input type="checkbox">
+            <p class="initial">nothing</p>
+        </div>
+        <div class="listelement">
+            <input type="checkbox">
+            <p class="initial">code</p>
+        </div> -->
+        <%for(var i = 0 ; i< newElements.length ; i++) {%>
+            <%if (newElements[i]!=''){%>
+                <div class="listelement">
+                    <input type="checkbox">
+                    <p><%= newElements[i] %></p>
+                </div>
+            <%}%>
+        <%}%>
+
+        <form action="/" method="post" class="input">
+            <input type="text" name="newTask" placeholder="New Item" autocomplete="off" autofocus>
+            <button type="submit" name="submit" value=<%= type %>>+</button>
+        </form>
+    </div>
+<%- include('footer'); -%>
